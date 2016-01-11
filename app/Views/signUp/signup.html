@@ -1,0 +1,75 @@
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-info">
+    <div class="panel panel-heading text-center">
+      <strong>SignUp</strong>
+    </div>
+    <div class="panel-body">
+      <form #heroForm="ngForm" (ngSubmit)="update(userObj)">
+        <!-- start name section -->
+        <div class="col-md-12 form-group">
+          <label class="col-md-3 text-right">Name</label>
+          <div class="col-md-6">
+            <input type="text" class="form-control" [(ngModel)]="user.name" autofocus required>
+          </div>
+        </div>
+        <!-- End name section -->
+
+        <!-- start email section -->
+        <div class="col-md-12 form-group">
+          <label class="col-md-3 text-right">Email</label>
+          <div class="col-md-6">
+            <input type="email" class="form-control" [(ngModel)]="user.email" required>
+          </div>
+        </div>
+        <!-- End email section -->
+
+        <!-- start contact section -->
+        <div class="col-md-12 form-group">
+          <label class="col-md-3 text-right">contact</label>
+          <div class="col-md-6">
+            <input type="twxt" class="form-control" maxlength="10" [(ngModel)]="user.contact" required>
+          </div>
+        </div>
+        <!-- End contact section -->
+
+        <!-- Start City section -->
+        <div class="col-md-12 form-group">
+          <label class="col-md-3 text-right">City</label>
+          <div class="col-md-6">
+            {{isChecked}}
+            <select class="form-control" [(ngModel)]="user.city" required>
+              <option value="">--Select City--</option>
+              <option *ngFor="#city of authservice.userCity">{{city}}</option>
+            </select>
+          </div>
+        </div>
+        <!-- End City section -->
+        <div class="col-md-12 text-center">
+          <button type="submit"  [disabled]="!heroForm.form.valid" class="btn btn-info" (click)="save(user)" >Save</button>
+          <button type="submit" class="btn btn-danger" (click)="clear()">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-10 col-md-offset-1 list-group">
+  <div class="list-group-item col-md-12" *ngFor="#userObj of authservice.authList">
+    <div class="col-md-3 bold">
+      {{userObj.name}}
+    </div>
+    <div class="col-md-3">
+      {{userObj.email}}
+    </div>
+    <div class="col-md-2">
+      {{userObj.city}}
+    </div>
+    <div class="col-md-2">
+      {{userObj.contact}}
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-warning" type="submit"><i class="fa fa-bars"></i></button>
+      <button class="btn btn-danger" (click)="delete(userObj)"><i class="fa fa-times"></i></button>
+    </div>
+  </div>
+</div>

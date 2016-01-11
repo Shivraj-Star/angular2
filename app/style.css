@@ -1,0 +1,30 @@
+.has-success {
+  border: 1px solid orange;
+}
+
+.bold {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.fs-21 {
+  font-size: 21px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+}
+
+.link {
+  color: #38BDFF;
+  border: 1px solid #38BDFF;
+  padding: 6px 20px;
+  font-weight: bold;
+}
+
+.link:hover, link:focus, link:active {
+  background: white;
+  text-decoration: none;
+  outline: none;
+}
