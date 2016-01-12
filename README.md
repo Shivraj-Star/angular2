@@ -1,2 +1,8 @@
 # angular2
-Angular 2 directives implement
+
+Uses angular 2.0.0-beta.0
+
+### Installation
+1. Install Dependencies: npm install
+	
+2. Run server: npm start
