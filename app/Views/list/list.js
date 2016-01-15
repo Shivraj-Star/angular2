@@ -1,4 +1,4 @@
-System.register(['angular2/core', "/app/service/user.service", '/app/Views/list/list'], function(exports_1) {
+System.register(['angular2/core', '/app/service/user.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +8,8 @@ System.register(['angular2/core', "/app/service/user.service", '/app/Views/list/
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, user_service_1, list_1;
-    var loginComponent;
+    var core_1, user_service_1;
+    var listComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -17,37 +17,30 @@ System.register(['angular2/core', "/app/service/user.service", '/app/Views/list/
             },
             function (user_service_1_1) {
                 user_service_1 = user_service_1_1;
-            },
-            function (list_1_1) {
-                list_1 = list_1_1;
             }],
         execute: function() {
-            loginComponent = (function () {
-                function loginComponent(authservice) {
+            listComponent = (function () {
+                function listComponent(authservice) {
                     this.authservice = authservice;
-                    this.login = {};
                 }
-                loginComponent.prototype.delete = function (obj) {
+                listComponent.prototype.delete = function (obj) {
                     _.remove(this.authservice.authList, obj);
                 };
-                loginComponent.prototype.validate = function (loginObj) {
+                listComponent.prototype.validate = function (loginObj) {
                     console.log(loginObj);
                 };
-                loginComponent.prototype.clear = function () {
-                    this.login = {};
-                };
-                loginComponent = __decorate([
+                listComponent = __decorate([
                     core_1.Component({
-                        templateUrl: '../app/Views/login/login.html',
-                        directives: [list_1.listComponent]
+                        selector: 'item-list',
+                        templateUrl: '../app/Views/list/list.html'
                     }), 
                     __metadata('design:paramtypes', [(typeof (_a = typeof user_service_1.authService !== 'undefined' && user_service_1.authService) === 'function' && _a) || Object])
-                ], loginComponent);
-                return loginComponent;
+                ], listComponent);
+                return listComponent;
                 var _a;
             })();
-            exports_1("loginComponent", loginComponent);
+            exports_1("listComponent", listComponent);
         }
     }
 });
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=list.js.map

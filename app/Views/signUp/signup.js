@@ -1,4 +1,4 @@
-System.register(['angular2/core', '/app/service/user.service'], function(exports_1) {
+System.register(['angular2/core', '/app/service/user.service', '/app/Views/list/list'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', '/app/service/user.service'], function(exports
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, user_service_1;
+    var core_1, user_service_1, list_1;
     var signUpComponent;
     return {
         setters:[
@@ -17,6 +17,9 @@ System.register(['angular2/core', '/app/service/user.service'], function(exports
             },
             function (user_service_1_1) {
                 user_service_1 = user_service_1_1;
+            },
+            function (list_1_1) {
+                list_1 = list_1_1;
             }],
         execute: function() {
             signUpComponent = (function () {
@@ -27,7 +30,7 @@ System.register(['angular2/core', '/app/service/user.service'], function(exports
                 signUpComponent.prototype.save = function (userObj) {
                     this.authservice.authList.push(userObj);
                     this.user = {};
-                    console.log(this.userList);
+                    console.log(this.authservice.authList);
                 };
                 signUpComponent.prototype.update = function (obj) {
                     this.user = obj;
@@ -36,11 +39,13 @@ System.register(['angular2/core', '/app/service/user.service'], function(exports
                     this.user = {};
                 };
                 signUpComponent.prototype.delete = function (obj) {
+                    this.todo = obj.name;
                     _.remove(this.authservice.authList, obj);
                 };
                 signUpComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/Views/signUp/signup.html'
+                        templateUrl: 'app/Views/signUp/signup.html',
+                        directives: [list_1.listComponent]
                     }), 
                     __metadata('design:paramtypes', [(typeof (_a = typeof user_service_1.authService !== 'undefined' && user_service_1.authService) === 'function' && _a) || Object])
                 ], signUpComponent);

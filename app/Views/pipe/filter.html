@@ -1,0 +1,28 @@
+<div class="col-md-12 alert alert-danger text-center">
+  <b>Filters</b>
+</div>
+<div class="col-md-12">
+  <!-- start suare section -->
+  <div class="col-md-6 form-group">
+    <div class="col-md-4">
+      <input type="text" class="form-control" [(ngModel)]="filter.square">
+    </div>
+    <div class="col-md-8">
+      <pre>
+        <b>result of Suare : </b> <b class="text-danger" style="font-size:20px">{{filter.square |square}}</b>
+      </pre>
+    </div>
+  </div>
+
+  <!-- start cube sec -->
+  <div class="col-md-6 form-group">
+    <div class="col-md-4">
+      <input type="text" class="form-control" [(ngModel)]="filter.case">
+    </div>
+    <div class="col-md-8">
+      <pre>
+        <b>result of Case : </b> <b class="text-danger" style="font-size:20px">{{filter.case |uppercase}}</b>
+      </pre>
+    </div>
+  </div>
+</div>

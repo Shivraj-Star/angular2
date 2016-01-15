@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'app/Views/signUp/signup', 'app/Views/login/login'], function(exports_1) {
+System.register(["angular2/core", "angular2/router", "app/Views/signUp/signup", "app/Views/login/login", "app/Views/home/home", "app/Views/pipe/filter"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', 'app/Views/signUp/signup', 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, signup_1, login_1;
+    var core_1, router_1, signup_1, login_1, home_1, filter_1;
     var AppComponent;
     return {
         setters:[
@@ -23,6 +23,12 @@ System.register(['angular2/core', 'angular2/router', 'app/Views/signUp/signup', 
             },
             function (login_1_1) {
                 login_1 = login_1_1;
+            },
+            function (home_1_1) {
+                home_1 = home_1_1;
+            },
+            function (filter_1_1) {
+                filter_1 = filter_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -30,18 +36,20 @@ System.register(['angular2/core', 'angular2/router', 'app/Views/signUp/signup', 
                 }
                 AppComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        templateUrl: 'app/router/router.html',
+                        selector: "my-app",
+                        templateUrl: "app/router/router.html",
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }),
                     router_1.RouteConfig([
                         {
-                            path: '/signup',
-                            name: 'Signup',
+                            path: "/signup",
+                            name: "Signup",
                             component: signup_1.signUpComponent,
                             useAsDefault: true
                         },
-                        { path: '/login', name: 'Login', component: login_1.loginComponent },
+                        { path: "/login", name: "Login", component: login_1.loginComponent },
+                        { path: "/home", name: "Home", component: home_1.homeComponent },
+                        { path: "/filter", name: "Filter", component: filter_1.filterComponent },
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

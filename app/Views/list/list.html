@@ -1,0 +1,22 @@
+<div class="col-md-10 col-md-offset-1 list-group">
+  <div class="col-md-12 page-header text-center">
+    <b>User List</b>
+  </div>
+  <div class="list-group-item col-md-12" *ngFor="#userObj of authservice.authList">
+    <div class="col-md-3 bold">
+      {{userObj.name}}
+    </div>
+    <div class="col-md-3">
+      {{userObj.email}}
+    </div>
+    <div class="col-md-2">
+      {{userObj.city}}
+    </div>
+    <div class="col-md-2">
+      {{userObj.contact}}
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-danger" (click)="delete(userObj)"><i class="fa fa-times"></i></button>
+    </div>
+  </div>
+</div>

@@ -11,5 +11,47 @@
   },
   "exclude": [
     "node_modules"
+  ],
+  "formatCodeOptions": {
+    "indentSize": 4,
+    "tabSize": 4,
+    "newLineCharacter": "\r\n",
+    "convertTabsToSpaces": true,
+    "insertSpaceAfterCommaDelimiter": true,
+    "insertSpaceAfterSemicolonInForStatements": true,
+    "insertSpaceBeforeAndAfterBinaryOperators": true,
+    "insertSpaceAfterKeywordsInControlFlowStatements": true,
+    "insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+    "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+    "placeOpenBraceOnNewLineForFunctions": false,
+    "placeOpenBraceOnNewLineForControlBlocks": false
+  },
+  "filesGlob": [
+    "./**/*.ts",
+    "./**/**/*.ts",
+    "./**/**/**/*.ts",
+    "!./node_modules/**/*.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true,
+    "formatOnSave": true
+  },
+  "files": [
+    "./app/boot.ts",
+    "./app/router/router.ts",
+    "./app/service/user.service.ts",
+    "./app/Views/home/home.ts",
+    "./app/Views/list/list.ts",
+    "./app/Views/login/login.ts",
+    "./app/Views/model/login.model.ts",
+    "./app/Views/pipe/filter.ts",
+    "./app/Views/pipe/pipe.ts",
+    "./app/Views/signUp/signup.ts",
+    "./backup/app/boot.ts",
+    "./backup/app/router/router.ts",
+    "./backup/app/service/user.service.ts",
+    "./backup/app/Views/list/list.ts",
+    "./backup/app/Views/login/login.ts",
+    "./backup/app/Views/signUp/signup.ts"
   ]
 }
